@@ -1,65 +1,96 @@
+
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="bg-[#f5f5f5] flex flex-col items-center px-5">
+      {/* Navbar */}
+      <nav className="h-[100px] w-full max-w-[1228px] flex items-center justify-between bg-[#f5f5f5]">
+        <div className="w-[130px]">
+          <Image src="/asset/logo/logo.png" alt="Logo" width={130} height={40} />
+        </div>
+        <div className="flex gap-[60px] items-center">
+          <p className="text-[29px] font-normal text-[#282828]"><strong>Home</strong></p>
+          <Link href="/about" className="text-[29px] font-normal text-[#282828] no-underline">About</Link>
+          <Link href="/contact" className="text-[29px] font-normal text-[#282828] no-underline">Contact</Link>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="w-full max-w-[1228px] h-[682px] grid grid-cols-2 gap-10 items-center">
+        <div className="flex flex-col gap-[30px]">
+          <p className="text-[63px] leading-tight text-[#282828] font-normal">
+            Halo, aku <strong>Muhammad Syaiful</strong>, seorang <em>tech enthusiast</em> juga pembelajar aktif yang juga suka mengajar.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+        <div className="w-full h-[564px] rounded-[5px] overflow-hidden">
+          <Image src="/asset/img/hero.png" alt="Muhammad Syaiful" width={600} height={564} className="w-full h-full object-cover" />
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="w-full max-w-[1284px] mt-12">
+        <h2 className="text-[45px] text-black font-normal mb-[27px]">Projects</h2>
+        <div className="h-[2px] bg-black mb-[30px]"></div>
+        <div className="relative">
+          <div className="grid grid-cols-3 gap-[30px] mb-10">
+            <div>
+              <p className="text-[30px] text-black mb-[10px]">01 Penelitian</p>
+              <div className="rounded-[5px] overflow-hidden h-[558px]">
+                <Image src="/asset/img/project1.png" alt="Penelitian Project" width={400} height={558} className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div>
+              <p className="text-[30px] text-black mb-[10px]">02 Pengabdian</p>
+              <div className="rounded-[5px] overflow-hidden h-[558px]">
+                <Image src="/asset/img/project2.png" alt="Pengabdian Project" width={400} height={558} className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div>
+              <p className="text-[30px] text-black mb-[10px]">03 Solidaritas</p>
+              <div className="rounded-[5px] overflow-hidden h-[558px]">
+                <div className="h-[558px] overflow-hidden">
+                  <Image src="/asset/img/project3.png" alt="Solidaritas Project" width={400} height={700} className="object-cover h-[700px] object-left" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Creation */}
+      <section className="w-full max-w-[1284px] mt-12">
+        <h2 className="text-[45px] text-black font-normal mb-[27px]">Pendidikan</h2>
+        <div className="h-[2px] bg-black mb-[30px]"></div>
+        <div className="grid grid-cols-2 gap-10 items-center py-10">
+          <p className="text-[37px] leading-normal text-black font-normal">
+            Bagi saya, pendidikan adalah alat membebaskan dan juga menyadarkan. Harmoni didalam jalan mendapatkan ilmu selalu membuat ku tersenyum
+          </p>
+          <div className="w-full h-[376px] rounded-[5px] overflow-hidden">
+            <Image src="/asset/img/content.png" alt="YouTube Content" width={600} height={376} className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full max-w-[1440px] bg-[#f5f5f5] py-10 border-t-2 border-black flex justify-between items-center mt-12">
+        <div className="w-[130px]">
+          <Image src="/asset/logo/logo.png" alt="Logo" width={130} height={40} />
+        </div>
+        <p className="text-[14.4px] text-gray-500 flex-1 text-center">© 2025 Muhammad Syaiful</p>
+        <div className="flex gap-[30px] items-center">
+          <a href="#" className="w-5 h-5">
+            <Image src="/asset/logo/instagram.svg" alt="Instagram" width={20} height={20} />
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+          <a href="#" className="w-5 h-5">
+            <Image src="/asset/logo/youtube.svg" alt="YouTube" width={20} height={20} />
+          </a>
+          <a href="#" className="w-4 h-4">
+            <Image src="/asset/logo/facebook.svg" alt="Facebook" width={16} height={16} />
           </a>
         </div>
-      </main>
+      </footer>
     </div>
   );
 }
