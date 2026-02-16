@@ -16,9 +16,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="py-3 w-full bg-[#f5f5f5] fixed top-0 left-0 right-0 z-10">
-      <div className="w-full max-w-screen-xl mx-auto px-4 flex items-center justify-between">
-        <Image src="/asset/logo/logo.png" alt="Logo" width={130} height={40} className="w-24 md:w-32" />
+    <nav className="py-0 w-full bg-[#f5f5f5] fixed top-0 left-0 right-0 z-10">
+      <div className="w-full max-w-screen-xl mx-auto px-2 flex items-center justify-between">
+        <Image src="/asset/logo/logo.png" alt="Logo" width={130} height={24} className="w-24 md:w-32" />
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 absolute right-4 text-black"
@@ -41,7 +41,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-lg md:text-xl text-[#282828] no-underline ${
+              className={`text-sm md:text-base text-[#282828] no-underline ${
                 pathname === link.href ? "font-bold" : "font-normal"
               }`}
             >
